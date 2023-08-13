@@ -86,7 +86,7 @@ namespace TheMastersPupilZepsMod
 
             foreach (PickupAchievement pickup in pickupAchievements)
             {
-                if (pickup.scene < 0 || pickup.scene == index)
+                if (pickup.scene == index)
                 {
                     pickup.CreatePickup();
                 }

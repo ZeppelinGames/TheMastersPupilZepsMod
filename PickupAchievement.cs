@@ -14,7 +14,7 @@ namespace TheMastersPupilZepsMod
         }
 
         public Vector3 position;
-        public int scene;
+        public int scene = -1;
         public GameObject go;
 
         public PickupAchievement(string name, string desc, Vector3 position, int scene = -1)

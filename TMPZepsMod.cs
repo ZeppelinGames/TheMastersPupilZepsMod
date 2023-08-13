@@ -18,7 +18,6 @@ namespace TheMastersPupilZepsMod
 
         private LineRenderer debugLine;
 
-
         public override void OnInitializeMelon()
         {
             base.OnInitializeMelon();
