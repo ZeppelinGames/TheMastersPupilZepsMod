@@ -70,6 +70,18 @@ namespace TheMastersPupilZepsMod
 
         public void NewScene(int index)
         {
+            CreateAchievementUI();
+            foreach (PickupAchievement pickup in pickupAchievements)
+            {
+                if (pickup.scene == index)
+                {
+                    pickup.CreatePickup();
+                }
+            }
+        }
+
+        void CreateAchievementUI()
+        {
             //Create canvas
             uiCanvas = GameObjectHelpers.CreateCanvas();
             uiCanvas.gameObject.SetActive(false);
@@ -83,14 +95,6 @@ namespace TheMastersPupilZepsMod
             GameObjectHelpers.CreateTextBox(panel, "Achievement Unlocked!", Color.white, 16, TextAnchor.MiddleLeft, AnchorPreset.Stretch);
             nameText = GameObjectHelpers.CreateTextBox(panel, "Top Text", Color.white, 48, TextAnchor.MiddleLeft, AnchorPreset.Stretch);
             descText = GameObjectHelpers.CreateTextBox(panel, "Bottom Text", Color.white, 16, TextAnchor.MiddleLeft, AnchorPreset.Stretch);
-
-            foreach (PickupAchievement pickup in pickupAchievements)
-            {
-                if (pickup.scene == index)
-                {
-                    pickup.CreatePickup();
-                }
-            }
         }
 
         public void Update(float dt)
